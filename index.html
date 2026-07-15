@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RatH Gaming Shop Mongolia</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+🎮 RatH Gaming Shop Mongolia
+</div>
+
+<nav>
+
+<a href="#" data-view="home" class="active">Home</a>
+<a href="#accounts" data-view="home">Accounts</a>
+<a href="#" data-view="home">Featured</a>
+<a href="#" data-view="admin">Admin</a>
+
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>PREMIUM MLBB ACCOUNTS</h1>
+
+<p>Trusted Marketplace In Mongolia</p>
+
+<a href="#accounts">
+<button>SHOP NOW</button>
+</a>
+
+</div>
+
+</section>
+
+
+<section id="accounts">
+
+<h2>Featured Accounts</h2>
+
+<div class="cards" id="cardsWrap">
+<!-- Картууд script.js-ээс accounts массиваас автоматаар үүснэ.
+     Шинэ акаунт нэмэх/засахыг script.js доторх ACCOUNTS массивт хийнэ. -->
+</div>
+
+</section>
+
+
+<section class="why">
+
+<h2>Why RatH Gaming?</h2>
+
+<div class="whyBox">
+
+<div>
+
+<h3>🔥 Premium Accounts</h3>
+
+<p>Collector, Legend, KOF, Naruto, Aspirants & More</p>
+
+</div>
+
+<div>
+
+<h3>⚡ Fast Response</h3>
+
+<p>Seller replies quickly after payment.</p>
+
+</div>
+
+<div>
+
+<h3>🛡 Trusted</h3>
+
+<p>Safe buying process.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 RatH Gaming Shop Mongolia
+<p class="disclaimerText">RatH Gaming is an independent marketplace — not affiliated with Moonton or Mobile Legends: Bang Bang. All accounts are sold as-is between buyer and seller.</p>
+
+</footer>
+
+
+<!-- ============ DETAILS MODAL ============ -->
+<div class="modalOverlay" id="detailOverlay">
+  <div class="modalBox">
+    <button class="closeBtn" id="closeDetail">×</button>
+    <img id="detailImg" src="" alt="">
+    <h3 id="detailTitle"></h3>
+    <p id="detailTier" class="tierTag"></p>
+    <ul class="detailStats" id="detailStats"></ul>
+    <div class="detailFoot">
+      <div>
+        <span class="priceLabel">Үнэ / Price</span>
+        <div class="price" id="detailPrice"></div>
+      </div>
+      <button id="buyBtn">Худалдаж авах</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAYMENT MODAL ============ -->
+<div class="modalOverlay" id="payOverlay">
+  <div class="modalBox small">
+    <button class="closeBtn" id="closePay">×</button>
+    <h3>Төлбөр шилжүүлэх</h3>
+    <p class="muted">Доорх дансанд яг заасан дүн, гүйлгээний утгыг зөв бичиж шилжүүлнэ үү.</p>
+    <div class="ibanBox">
+      <div class="row"><span>Банк</span><b id="payBank">Khan Bank</b></div>
+      <div class="row"><span>Данс / IBAN</span><b id="payIban">MN00 0000 0000 0000 0000</b></div>
+      <div class="row"><span>Хүлээн авагч</span><b id="payHolder">RatH Gaming</b></div>
+      <div class="row"><span>Дүн</span><b id="payAmount">₮0</b></div>
+      <div class="row"><span>Гүйлгээний утга</span><b class="codePill" id="payCode">RTH-0000</b></div>
+    </div>
+    <label>Таны Gmail хаяг (нэвтрэх мэдээлэл энд очно)</label>
+    <input type="email" id="buyerEmail" placeholder="tanii.email@gmail.com">
+    <button id="confirmPayBtn" class="fullBtn">Шилжүүлэг хийсэн — хүсэлт илгээх</button>
+    <p class="warn">Гүйлгээний утгандаа кодоо заавал бичээрэй, эс тэгвэл таны төлбөрийг олж танихад хүндрэлтэй болно.</p>
+  </div>
+</div>
+
+<!-- ============ ADMIN VIEW ============ -->
+<div class="modalOverlay" id="adminOverlay">
+  <div class="modalBox large">
+    <button class="closeBtn" id="closeAdmin">×</button>
+    <h3>Админ самбар</h3>
+    <p class="warn">⚠️ Энэ сайт мөнгө орж ирснийг банкнаас автоматаар шалгадаг. Автомат шалгалт хийлгэхийн тулд утга дээр кодыг бичнэ үү.  "Баталгаажуулж имэйл илгээх" дарна.</p>
+
+    <h4 id="formHeading">Шинэ акаунт нэмэх</h4>
+    <div class="addForm">
+      <div class="f2col">
+        <div>
+          <label>Screenshot зураг</label>
+          <input type="file" id="fImage" accept="image/*">
+          <img id="fPreview" class="preview hidden">
+        </div>
+        <div>
+          <label>Tier / Rank нэр</label>
+          <input type="text" id="fTier" placeholder="жишээ: Renowned Collector II">
+          <label>Үнэ (₮)</label>
+          <input type="number" id="fPrice" placeholder="жишээ: 350000">
+          <label>Skin тоо</label>
+          <input type="number" id="fSkins" placeholder="жишээ: 62">
+          <label>Нэвтрэх мэдээлэл (gmail/нууц үг) — нийтэд харагдахгүй</label>
+          <input type="text" id="fCreds" placeholder="gmail: xxx@gmail.com / нууц үг: xxxx">
+        </div>
+      </div>
+      <button id="addListingBtn" class="fullBtn">Зар нэмэх</button>
+      <button id="cancelEditBtn" class="fullBtn secondaryBtn hidden">Цуцлах</button>
+    </div>
+
+    <h4>Одоо байгаа зарууд — зураг/үнэ өөрчлөх</h4>
+    <table>
+      <thead><tr><th>Акаунт</th><th>Tier</th><th>Skins</th><th>Үнэ</th><th></th></tr></thead>
+      <tbody id="accountsBody"></tbody>
+    </table>
+
+    <h4>Хүлээгдэж буй захиалгууд</h4>
+    <table>
+      <thead><tr><th>Захиалга</th><th>Акаунт</th><th>Дүн</th><th>Имэйл</th><th>Төлөв</th><th></th></tr></thead>
+      <tbody id="ordersBody"></tbody>
+    </table>
+    <p class="muted" id="noOrders">Одоогоор захиалга алга.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+   <script>
+// Админ самбар нээгдэхээс өмнө нууц үг асуух хэсэг
+const adminOverlayElement = document.getElementById('adminOverlay');
+
+if (adminOverlayElement) {
+    // Netlify дээр асах үед шууд харагдахаас сэргийлж нууна
+    adminOverlayElement.style.display = 'none'; 
+
+    // Чиний сайтад байгаа "Админ руу орох" товчлуурыг олно
+    // Тэр товчны id нь өөр байвал openAdminBtn-ийг солно
+    const adminToggleBtn = document.getElementById('openAdminBtn') || document.querySelector('[href="#admin"]');
+    
+    // Хэрэв тийм товчлуур олдвол нууц үг нэхдэг болгоно
+    if (adminToggleBtn) {
+        adminToggleBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            let pass =SupraMk4Bil prompt("Админ нууц үгийг оруулна уу:");
+            if (pass === 'rath123') { // Энд өөрийнхөө нууц үгийг солиод бичээрэй
+                adminOverlayElement.style.display = 'block';
+            } else {
+                alert("Нууц үг буруу байна!");
+            }
+        });
+    }
+}
+</script>  
+</body>
+
+</html>
