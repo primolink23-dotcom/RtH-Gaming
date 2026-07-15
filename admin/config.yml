@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "pages"
+    label: "Хуудаснууд"
+    files:
+      - file: "index.html"
+        label: "Нүүр хуудас"
+        name: "home"
+        fields:
+          - { label: "Гарчиг", name: "title", widget: "string" }
+          - { label: "Үндсэн бичвэр", name: "body", widget: "markdown" }
